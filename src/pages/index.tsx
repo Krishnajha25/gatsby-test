@@ -136,13 +136,17 @@ const links = [
     },
 ]
 
-const zarazTracker = () => {
-    if ((window as any).zaraz && typeof (window as any).zaraz.track === "function") {
-        (window as any).zaraz.track("purchase", {value: 200, currency: "USD"});
-    }
-}
 
 const IndexPage: React.FC<PageProps> = () => {
+    const isBrowser = typeof window !== "undefined"
+
+    const zarazTracker = () => {
+        if(isBrowser) {
+            if ((window as any).zaraz && typeof (window as any).zaraz.track === "function") {
+                (window as any).zaraz.track("purchase", {value: 200, currency: "USD"});
+            }
+        }
+    }
     return (
         <>
             {zarazTracker()}
