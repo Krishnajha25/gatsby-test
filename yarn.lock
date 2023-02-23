@@ -4974,6 +4974,11 @@ gatsby-plugin-page-creator@^5.6.0:
     globby "^11.1.0"
     lodash "^4.17.21"
 
+gatsby-plugin-rudderstack@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-rudderstack/-/gatsby-plugin-rudderstack-2.0.0.tgz#871ed99a00ed2a82f12ce0e5985fcc3d7a1bf219"
+  integrity sha512-biYxm+UcXp0E8TRFk7K3+P4UQMDT+Tq5XqJnG5d8RHyvltuIBFVojDYtm88dC6Xv2ckIg1Ct0KDMLI8v7XnpnA==
+
 gatsby-plugin-typescript@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-5.6.0.tgz#84f48522bff4a863f75fe0c14f7475115dbff73a"
