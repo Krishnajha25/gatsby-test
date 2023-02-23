@@ -1,49 +1,49 @@
-import * as React from "react"
-import { HeadFC, PageProps, Script } from "gatsby"
+import * as React from "react";
+import { HeadFC, PageProps, Script } from "gatsby";
 
 const pageStyles = {
     color: "#232129",
     padding: 96,
     fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+};
 const headingStyles = {
     marginTop: 0,
     marginBottom: 64,
     maxWidth: 320,
-}
+};
 const headingAccentStyles = {
     color: "#663399",
-}
+};
 const paragraphStyles = {
     marginBottom: 48,
-}
+};
 const codeStyles = {
     color: "#8A6534",
     padding: 4,
     backgroundColor: "#FFF4DB",
     fontSize: "1.25rem",
     borderRadius: 4,
-}
+};
 const listStyles = {
     marginBottom: 96,
     paddingLeft: 0,
-}
+};
 const doclistStyles = {
     paddingLeft: 0,
-}
+};
 const listItemStyles = {
     fontWeight: 300,
     fontSize: 24,
     maxWidth: 560,
     marginBottom: 30,
-}
+};
 
 const linkStyle = {
     color: "#8954A8",
     fontWeight: "bold",
     fontSize: 16,
     verticalAlign: "5%",
-}
+};
 
 const docLinkStyle = {
     ...linkStyle,
@@ -51,7 +51,7 @@ const docLinkStyle = {
     display: `inline-block`,
     marginBottom: 24,
     marginRight: 12,
-}
+};
 
 const descriptionStyle = {
     color: "#232129",
@@ -59,7 +59,7 @@ const descriptionStyle = {
     marginTop: 10,
     marginBottom: 0,
     lineHeight: 1.25,
-}
+};
 
 const docLinks = [
     {
@@ -71,8 +71,8 @@ const docLinks = [
         text: "GraphQL Typegen Documentation",
         url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
         color: "#8954A8",
-    }
-]
+    },
+];
 
 const badgeStyle = {
     color: "#fff",
@@ -88,7 +88,7 @@ const badgeStyle = {
     top: -2,
     marginLeft: 10,
     lineHeight: 1,
-}
+};
 
 const links = [
     {
@@ -134,45 +134,48 @@ const links = [
             "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
         color: "#663399",
     },
-]
-
+];
 
 const IndexPage: React.FC<PageProps> = () => {
-    const isBrowser = typeof window !== "undefined"
+    const isBrowser = typeof window !== "undefined";
 
     const zarazTracker = () => {
-        if(isBrowser) {
-            if ((window as any).zaraz && typeof (window as any).zaraz.track === "function") {
-                (window as any).zaraz.track("purchase", {value: 200, currency: "USD"});
+        if (isBrowser) {
+            if (
+                (window as any).zaraz &&
+                typeof (window as any).zaraz.track === "function"
+            ) {
+                (window as any).zaraz.track("purchase", {
+                    value: 200,
+                    currency: "USD",
+                });
             }
         }
-    }
+    };
     return (
         <>
             {zarazTracker()}
             {
-                <Script
-                    strategy="off-main-thread"
-                >
-                    {
-                        `!function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits","startSession","endSession"],e.factory=function(t){return function(){e.push([t].concat(Array.prototype.slice.call(arguments)))}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
-                        e.load("2M5GgcpiS6nqm7qEQ1uj4kurldf","https://touchlessdysg.dataplane.rudderstack.com"),
-                        e.page()}();`
-                    }
+                <Script strategy="off-main-thread" type="text/javascript">
+                    {`!function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits","startSession","endSession"],e.factory=function(t){return function(){e.push([t].concat(Array.prototype.slice.call(arguments)))}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
+                        e.load("2M8d1PvoarjTU5RrQooqId36NSE","https://torinitakqjt.dataplane.rudderstack.com"),
+                        e.page()}();`}
                 </Script>
             }
             <main style={pageStyles}>
                 <h1 style={headingStyles}>
                     Congratulations
                     <br />
-                    <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
+                    <span style={headingAccentStyles}>
+                        — you just made a Gatsby site! 🎉🎉🎉
+                    </span>
                 </h1>
                 <p style={paragraphStyles}>
-                    Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-                    update in real-time. 😎
+                    Edit <code style={codeStyles}>src/pages/index.tsx</code> to
+                    see this page update in real-time. 😎
                 </p>
                 <ul style={doclistStyles}>
-                    {docLinks.map(doc => (
+                    {docLinks.map((doc) => (
                         <li key={doc.url} style={docLinkStyle}>
                             <a
                                 style={linkStyle}
@@ -184,8 +187,11 @@ const IndexPage: React.FC<PageProps> = () => {
                     ))}
                 </ul>
                 <ul style={listStyles}>
-                    {links.map(link => (
-                        <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
+                    {links.map((link) => (
+                        <li
+                            key={link.url}
+                            style={{ ...listItemStyles, color: link.color }}
+                        >
                             <span>
                                 <a
                                     style={linkStyle}
@@ -194,11 +200,16 @@ const IndexPage: React.FC<PageProps> = () => {
                                     {link.text}
                                 </a>
                                 {link.badge && (
-                                    <span style={badgeStyle} aria-label="New Badge">
+                                    <span
+                                        style={badgeStyle}
+                                        aria-label="New Badge"
+                                    >
                                         NEW!
                                     </span>
                                 )}
-                                <p style={descriptionStyle}>{link.description}</p>
+                                <p style={descriptionStyle}>
+                                    {link.description}
+                                </p>
                             </span>
                         </li>
                     ))}
@@ -209,9 +220,9 @@ const IndexPage: React.FC<PageProps> = () => {
                 />
             </main>
         </>
-    )
-}
+    );
+};
 
-export default IndexPage
+export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Home Page</title>;
